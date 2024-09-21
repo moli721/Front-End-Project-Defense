@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 英雄联盟</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./images/favicon.ico">
+</head>
+
+<script src="./script.js"></script>
+
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <div class="logo-container">
+                <img src="./images/英雄联盟.webp" alt="Riot Games" class="riot-logo">
+
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="32" viewBox="0 0 30 32" fill="none"
+                class="league">
+                <g>
+                    <path
+                        d="M1.80644 9.75049C0.655032 11.8373 0 14.2271 0 16.7683C0 19.3095 0.655032 21.7015 1.80644 23.7883V9.75049Z"
+                        fill="#C28F2C"></path>
+                    <path
+                        d="M15 2.02222C13.7829 2.02222 12.602 2.16921 11.4688 2.43647V4.75718C12.5907 4.44093 13.7738 4.26721 15 4.26721C22.0218 4.26721 27.7153 9.84627 27.7153 16.7305C27.7153 19.8307 26.5571 22.6659 24.6464 24.8463L24.2838 26.118L23.4814 28.9331C27.4184 26.2761 30.0023 21.8195 30.0023 16.7705C30 8.62355 23.2843 2.02222 15 2.02222Z"
+                        fill="#C28F2C"></path>
+                    <path
+                        d="M11.4688 24.4209H22.9737H23.2253C25.1723 22.4209 26.3713 19.7126 26.3713 16.7305C26.3713 10.5746 21.2806 5.58569 15 5.58569C13.767 5.58569 12.5816 5.78168 11.4688 6.1358V24.4209Z"
+                        fill="#C28F2C"></path>
+                    <path d="M10.1088 0H1.55029L3.16634 3.29844V28.7038L1.55029 32H21.1922L22.9737 25.7572H10.1088V0Z"
+                        fill="#C28F2C"></path>
+                </g>
+            </svg>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#" class="nav-link">游戏</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">英雄</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">最新消息</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">版本更新公告</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">电竞</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">联盟宇宙</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">客服</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索...">
+                <button class="search-button">
+                    <svg viewBox="0 0 19 20">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M19 18.6l-5.2-5.2C15.2 12 16 10.1 16 8c0-4.4-3.6-8-8-8S0 3.6 0 8s3.6 8 8 8c1.6 0 3.1-.5 4.3-1.3l5.3 5.3 1.4-1.4zM2 8c0-3.3 2.7-6 6-6 1.6 0 3.1.6 4.2 1.8C13.4 4.9 14 6.4 14 8s-.6 3.1-1.8 4.2C11.1 13.4 9.6 14 8 14c-3.3 0-6-2.7-6-6z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="language-selector">
+                <svg width="14" height="14" viewBox="0 0 16 16">
+                    <title>globeIcon</title>
+                    <path
+                        d="M7.992 0C3.576 0 0 3.584 0 8s3.576 8 7.992 8C12.416 16 16 12.416 16 8s-3.584-8-8.008-8Zm5.544 4.8h-2.36c-.256-1-.624-1.96-1.104-2.848A6.424 6.424 0 0 1 13.536 4.8ZM8 1.632A11.27 11.27 0 0 1 9.528 4.8H6.472A11.27 11.27 0 0 1 8 1.632ZM1.808 9.6A6.594 6.594 0 0 1 1.6 8c0-.552.08-1.088.208-1.6h2.704A13.212 13.212 0 0 0 4.4 8c0 .544.048 1.072.112 1.6H1.808Zm.656 1.6h2.36c.256 1 .624 1.96 1.104 2.848A6.39 6.39 0 0 1 2.464 11.2Zm2.36-6.4h-2.36a6.39 6.39 0 0 1 3.464-2.848A12.52 12.52 0 0 0 4.824 4.8ZM8 14.368A11.27 11.27 0 0 1 6.472 11.2h3.056A11.27 11.27 0 0 1 8 14.368ZM9.872 9.6H6.128A11.77 11.77 0 0 1 6 8c0-.544.056-1.08.128-1.6h3.744C9.944 6.92 10 7.456 10 8s-.056 1.072-.128 1.6Zm.2 4.448a12.52 12.52 0 0 0 1.104-2.848h2.36a6.424 6.424 0 0 1-3.464 2.848ZM11.488 9.6c.064-.528.112-1.056.112-1.6s-.048-1.072-.112-1.6h2.704c.128.512.208 1.048.208 1.6s-.08 1.088-.208 1.6h-2.704Z"
+                        fill="#E8E8E8"></path>
+                </svg>
+            </div>
+            <button class="play-now-button">
+                立即游玩
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="video-section">
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="./images/介绍视频.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="video-overlay">
+                <div class="video-img">
+                    <img src="./images/League of legends.png" alt="League of Legends">
+                </div>
+
+                <div class="video-text">
+                    <button class="video-button">
+                        免费游玩
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="handpicked-section">
+
+            <h2 class="handpicked-title">精选内容</h1>
+
+                <div class="handpicked-container">
+                    <div class="card-container">
+
+                        <div class="card1">
+                            <a href="#">
+                                <div class="card-image">
+                                    <img src="./images/card-image1.webp" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-data">
+                                        <div class="card-category">游戏更新</div>
+                                        <div class="card-time">2 周前</div>
+                                    </div>
+                                    <div class="card-title">14.18版本更新公告</div>
+                                    <div class="card-description">2024世界大赛的官方比赛版本來了！</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card2">
+                            <a href="#">
+                                <div class="card-image">
+                                    <img src="./images/card-image2.webp" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-data">
+                                        <div class="card-time">2 周前</div>
+                                    </div>
+                                    <div class="card-title">2024世界大赛的官方比赛版本來了！</div>
+                                    <div class="card-description">世界大赛回来了！一起来看看2024世界大赛制吧。</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card3">
+                            <a href="#">
+                                <div class="card-image">
+                                    <img src="./images/card-image3.webp" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-data">
+                                        <div class="card-category">开发幕后</div>
+                                        <div class="card-time">4 周前</div>
+                                    </div>
+                                    <div class="card-title">开发日志懒人包：英雄造型和其他内容</div>
+                                    <div class="card-description">Meddler和Pabro快速解答玩家的疑问：荣誉机制、英雄造型
+                                        以及其他内容</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section class="hexo-section">
+            <div class="hexo-container">
+                <div class="hexo-main">
+                    <div class="bladeheader">
+                        <p>选择</p>
+                        <h2>英雄</h2>
+                        <p>无论你是喜欢冲撞开战，支援队友，或是见机行事，在峡谷里都有适合你的位置。</p>
+                        <div class="blade-button">
+                            <button class="blade-excavate">发掘更多英雄</button>
+                            <button class="blade-playnow">立即游玩</button>
+                        </div>
+                    </div>
+
+                    <div class="hexo-carousel">
+                        <div class="icon-list">
+                            <div class="icon-tab" data-hero="刺客">
+                                <div class="icon-tab-img">
+                                    <img src="./images/刺客.webp" alt="刺客">
+                                </div>
+                                <div class="icon-tab-label">刺客</div>
+                            </div>
+                            <div class="icon-tab" data-hero="战士">
+                                <div class="icon-tab-img">
+                                    <img src="./images/战士.webp" alt="战士">
+                                </div>
+                                <div class="icon-tab-label">战士</div>
+                            </div>
+                            <div class="icon-tab" data-hero="法师">
+                                <div class="icon-tab-img">
+                                    <img src="./images/法师.webp" alt="法师">
+                                </div>
+                                <div class="icon-tab-label">法师</div>
+                            </div>
+                            <div class="icon-tab" data-hero="射手">
+                                <div class="icon-tab-img">
+                                    <img src="./images/射手.webp" alt="射手">
+                                </div>
+                                <div class="icon-tab-label">射手</div>
+                            </div>
+                            <div class="icon-tab" data-hero="辅助">
+                                <div class="icon-tab-img">
+                                    <img src="./images/辅助.webp" alt="辅助">
+                                </div>
+                                <div class="icon-tab-label">辅助</div>
+                            </div>
+                            <div class="icon-tab" data-hero="坦克">
+                                <div class="icon-tab-img">
+                                    <img src="./images/坦克.webp" alt="坦克">
+                                </div>
+                                <div class="icon-tab-label">坦克</div>
+                            </div>
+                        </div>
+
+                        <div class="icon-processbar">
+                            <div class="progress-container">
+                                <div class="icon-processbar-line"></div>
+                            </div>
+                            <div class="trigger-wapper">
+                                <button class="trigger-left-btn">
+                                    <span class="trigger-left-btn-icon">
+                                        <svg height="32" width="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M11.1285 14.9997L15.421 10.7072L14.0068 9.29297L7.30007 15.9997L14.0068 22.7064L15.421 21.2922L11.1285 16.9997H23V14.9997H11.1285Z"
+                                                fill="currentcolor" />
+                                        </svg>
+
+                                    </span>
+                                </button>
+                                <button class="trigger-right-btn">
+                                    <span class="trigger-right-btn-icon">
+                                        <svg height="32" width="32" viewBox="0 0 32 32" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M20.8714 14.9997L16.5786 10.7072L17.9928 9.29297L24.6999 15.9997L17.9928 22.7069L16.5786 21.2926L20.8715 16.9997H9V14.9997H20.8714Z"
+                                                fill="currentcolor" />
+                                        </svg>
+
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-imgcontaniner">
+                    <div class="hero-img">
+                        <img src="./images/英雄/阿卡丽.webp" alt="阿卡丽">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="canyon-section">
+            <div class="canyon-container">
+                <div class="canyon-hexo">
+                    <div class="canyon-hexo-img">
+                        <img src="./images/峡谷图/峡谷阿卡丽.webp" alt="峡谷阿卡丽">
+                    </div>
+                </div>
+
+                <div class="canyon-text">
+                    <div class="canyon-text-description">
+                        <div class="canyon-super-title">奋力战斗</div>
+                        <div class="canyon-title">也有型</div>
+                        <div class="canyon-description">用造型来变更最爱英雄的外表，展现你的风格。</div>
+                    </div>
+                    <div class="canyon-button">
+                        <button class="canyon-button-playnow">立即游玩</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="gameplay-section">
+            <div class="gameplay-container">
+                <div class="gameplay-text">
+                    <div class="gameplay-text-description">
+                        <div class="gameplay-super-title">多重玩法</div>
+                        <div class="gameplay-title">任君选择</div>
+                        <div class="gameplay-button">
+                            <button class="gameplay-button-playnow">立即游玩</button>
+                        </div>
+                    </div>
+
+                    <div class="gameplay-imgcontainer">
+                        <div class="gameplay-img-item">
+                            <img src="./images/峡谷图/竞技场.webp" alt="竞技场">
+                            <div class="gameplay-img-item-description">
+                                竞技场
+                            </div>
+                        </div>
+                        <div class="gameplay-img-item">
+                            <img src="./images/峡谷图/召唤师峡谷.webp" alt="召唤师峡谷">
+                            <div class="gameplay-img-item-description">
+                                召唤师峡谷
+                            </div>
+                        </div>
+                        <div class="gameplay-img-item">
+                            <img src="./images/峡谷图/大乱斗.webp" alt="大乱斗">
+                            <div class="gameplay-img-item-description">
+                                大乱斗
+                            </div>
+                        </div>
+                        <div class="gameplay-img-item">
+                            <img src="./images/峡谷图/云顶之弈.webp" alt="云顶之弈">
+                            <div class="gameplay-img-item-description">
+                                云顶之弈
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gameplay-video-container">
+                    
+                    <div class="gameplay-video">
+                        <video autoplay muted loop>
+                            <source src="./images//峡谷图/LOL_HOME_arena_Module_v02.mp4" type="video/webm">
+                        </video>
+                        <div class="gameplay-video-circle"></div>
+                    </div>
+
+                    
+                    <div class="gameplay-video-description">
+                        <div class="gameplay-video-description-title">
+                            召唤双排好伙伴
+                        </div>
+                        <div class="gameplay-video-description-description">
+                            全新16人大混战降临，快来全新地图体验前所未见的各种增幅装置、道具，和伙伴一路攀上竞技场之巅吧！
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="main-footer">
+        <!-- <p>版权所有 &copy; 2024 英雄联盟</p> -->
+    </footer>
+</body>
+
+</html>

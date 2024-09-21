@@ -1,0 +1,877 @@
+/* 页面主体样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #f9f9f9;
+}
+
+/* 主导航栏样式 */
+.main-header {
+    background-color: rgba(17, 17, 17, 0.9); /* 稍微透明的背景 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 80px;
+    position: fixed; /* 固定导航栏 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; /* 确保导航栏在最上层 */
+}
+
+/* 导航栏左侧区域样式 */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo容器样式 */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Riot Games logo样式 */
+.riot-logo {
+    height: 32px;
+    margin-right: 20px;
+}
+
+/* 英雄联盟logo样式 */
+.league {
+    height: 32px;
+}
+
+/* 主导航菜单样式 */
+.main-nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* 导航列表样式 */
+.nav-list {
+    display: flex;
+    margin-left: 20px;
+}
+
+/* 导航项样式 */
+.nav-item {
+    margin: 0 15px;
+}
+
+/* 导航链接样式 */
+.nav-link {
+    color: #f9f9f9;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 导航链接悬停效果 */
+.nav-link:hover {
+    color: #C28F2C;
+}
+
+/* 导航栏右侧区域样式 */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* 搜索容器样式 */
+.search-container {
+    position: relative;
+    margin-right: 15px;
+}
+
+/* 搜索输入框样式 */
+.search-input {
+    background-color: #333;
+    border: none;
+    padding: 8px 30px 8px 10px;
+    color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* 搜索按钮样式 */
+.search-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 搜索按钮图标样式 */
+.search-button svg {
+    width: 19px;
+    height: 20px;
+    fill: #f9f9f9;
+}
+
+/* 语言选择器样式 */
+.language-selector {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* 语言选择器图标样式 */
+.language-selector svg {
+    width: 15px;
+    height: 15px;
+    fill: #f9f9f9;
+}
+
+/* "立即游玩"按钮样式 */
+.play-now-button {
+    background-color: #0BC4E2;
+    color: #111;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* "立即游玩"按钮悬停效果 */
+.play-now-button:hover {
+    background-color: #0FDBFC;
+}
+
+/* 视频区域样式 */
+.video-section {
+    position: relative;
+    height: 100vh; /* 设置为视口高度 */
+    padding-top: 80px; /* 为固定导航栏留出空间 */
+    /* box-sizing: border-box; 确保padding不会增加总高度 */
+}
+
+/* 视频容器样式 */
+.video-container {
+    position: absolute;
+    top: 80px; /* 从导航栏下方开始 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* 视频元素样式 */
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 视频覆盖层样式 */
+.video-overlay {
+    position: absolute;
+    top: 80px; /* 从导航栏下方开始 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* 确保覆盖层在视频上方 */
+}
+
+/* "免费游玩"按钮样式 */
+.video-button {
+    font-family: 'arya';
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: #C89B3C;
+    color: #000;
+    border: none;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* "免费游玩"按钮外层边框样式 */
+.video-button::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid #C89B3C;
+    pointer-events: none;
+}
+
+/* "免费游玩"按钮内层边框样式，初始不可见 */
+.video-button::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    border: 1px solid #000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* "免费游玩"按钮悬停效果 */
+.video-button:hover {
+    background-color: #785A28;
+}
+
+/* "免费游玩"按钮悬停时显示内层边框 */
+.video-button:hover::after {
+    opacity: 1;
+}
+
+/* 精选内容区域样式 */
+
+.handpicked-section {
+    position: relative;
+    padding: 40px 80px; /* 上下40px，左右80px */
+    background-image: url('./images/hexo-section-bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 添加一个遮罩层来增加文字可读性 */
+.handpicked-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.05); /* 半透明黑色遮罩 */
+    z-index: 1;
+}
+
+.handpicked-title {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #f9f9f9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+.handpicked-container {
+    position: relative;
+    z-index: 2; /* 确保内容在遮罩层之上 */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.card1, .card2, .card3 {
+    width: calc(33.33% - 20px);
+    background-color: rgba(249, 249, 249, 0.9); /* 稍微透明的背景 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card1:hover, .card2:hover, .card3:hover {
+    transform: translateY(-5px);
+}
+
+.card-image{
+    width: 100%;
+    height: 300px;
+    object-fit: hidden;
+}
+
+.card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-image img:hover{
+    transform: scale(1.15);
+}
+
+.card-body {
+    font-family: 'arya';
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.card-data {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.card-category {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color:  rgb(200, 170, 110);
+    font-family: "SpiegelSans";
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 16px;
+    color: #e6cbcb;
+}
+
+
+.hexo-section{
+    position: relative;
+    /* padding: 0px 0; */
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+
+/* 整体区域，左边是图片，右边是文字 */
+.hexo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 0 45px;
+    background-image: url('./images/英雄背景图/刺客背景图.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 左边区域文字 */
+.hexo-main {
+    flex: 0 1 50%; /* 占据父容器50%宽度,不增长但可以收缩 */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #0A1428;
+}
+
+.bladeheader{
+    display: flex;
+    width: 100%;
+    color: #0A1428;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bladeheader p{
+    font-size: 24px;
+    padding-bottom: 12px;
+    text-align: center;
+}
+
+.bladeheader h2{
+    font-size: 96px;
+    font-style: italic;
+    padding-bottom: 24px;
+}
+
+.blade-button {
+    /* 使两个按钮贴的更紧，同时如果不设置宽度,justify-content将不会产生作用 */
+    width: 60%;
+    margin-top: 40px;
+    font-family: "SpiegelSans";
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 直接看官网的配置就行 */
+.blade-excavate {
+    font-size: 22px;
+    color: #0A1428;
+    background-color: #c8aa6e;
+    padding: 20px 32px;
+    border: none;
+    transition: backgroundcolor 0.3s ease;
+}
+
+.blade-excavate:hover {
+    background-color: #e0c285; /* 更亮的金色 */
+}
+
+.blade-playnow {
+    font-size: 22px;
+    color: #0A1428;
+    background-color: #59c1de;
+    padding: 20px 32px;
+    border: none;
+}
+
+.blade-playnow:hover {
+    background-color: #7ad3ef; /* 更亮的蓝色 */
+}
+
+.hexo-carousel{
+    padding: 40px 0 20px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 隐藏超出部分 */
+    align-items: center;
+}
+
+/* 图片的排版格式 */
+.icon-list{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icon-tab {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    flex: 0 0 20%; /* 初始basic设置为20%，但是grow和shrink都为0，所以不增长，不收缩 */
+}
+
+.icon-tab.active {
+    transform: scale(1.1);
+}
+
+
+.icon-tab.active .icon-tab-img img {
+    filter: brightness(1.2);
+}
+
+.icon-tab.active .icon-tab-label {
+    color: #C89B3C;
+}
+
+.icon-tab-img {
+    width: 50%;  /* 设置为50%,防止失真*/
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-tab-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+    object-fit: cover;  /* 保持图片比例并填充容器 */
+}
+
+.icon-tab-label {
+    transition: transform 0.3s ease;
+}
+
+.icon-tab:hover {
+    transform: scale(1.05);
+}
+
+/* 当鼠标悬停在图标上时，图标和标签同时放大 */
+.icon-tab:hover .icon-tab-img img,
+.icon-tab:hover .icon-tab-label {
+    transform: scale(1.05);
+}
+
+.icon-tab-label{
+    margin-top: 20px;
+    font-family: "SpiegelSans";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.icon-processbar {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 使进度条和箭头分布在两端 */
+}
+
+.progress-container {
+    flex-grow: 1; /* 占据除箭头外的所有空间 */
+    height: 2px;
+    background-color: #B5B7BA;
+    position: relative;
+    margin-right: 20px; /* 与箭头之间的间距 */
+}
+
+.icon-processbar-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20%; /* 一次显示5个，所以是20% */
+    background-color: #C28F2C;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.trigger-wapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80px; /* 两个按钮的总宽度 */
+}
+
+.trigger-left-btn,
+.trigger-right-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 32px; /* SVG的宽度 */
+    height: 32px; /* SVG的高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trigger-left-btn:disabled,
+.trigger-right-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.trigger-left-btn-icon,
+.trigger-right-btn-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trigger-left-btn-icon svg,
+.trigger-right-btn-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 设置SVG的颜色 */
+.trigger-left-btn-icon svg path,
+.trigger-right-btn-icon svg path {
+    fill: #C28F2C;
+}
+
+
+.hero-imgcontainer {
+    flex: 0 1 50%; /* 占据父容器50%宽度,不增长但可以收缩 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* 保持图片的纵横比，并将其完全包含在容器内 */
+}
+
+/* 2024/9/20 */
+.canyon-section {
+    position: relative;
+    background-image: url('./images/峡谷图/峡谷背景图.webp');
+    height: 100vh; /* 视口高度 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.canyon-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 48px 48px; /* 左右各48px */
+    /* 不能用margin，否则会超出视口 */
+}
+
+.canyon-hexo {
+    flex: 1; /* 平均分配空间 */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canyon-hexo-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canyon-hexo-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.canyon-text {
+    font-family: "SpiegelSans";
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: #f9f9f9;
+}
+
+.canyon-text-description {
+    margin-bottom: 20px;
+}
+
+.canyon-super-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.canyon-title {
+    font-size: 100px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.canyon-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.canyon-button-playnow {
+    font-size: 18px;
+    padding: 19px 32px;
+    background-color: #C8AA6E;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.canyon-button-playnow:hover {
+    background-color: #0FDBFC;
+}
+
+
+.gameplay-section {
+    position: relative;
+    background-image: url('./images/峡谷图/玩法背景图.webp');
+    height: 1050px; /* 视口高度  不能少，再少就失控了*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gameplay-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 48px 48px 24px; /* 左右各48px */
+    /* 不能用margin，否则会超出视口 */
+}
+
+.gameplay-text {
+    font-family: "SpiegelSans";
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f9f9f9;
+}
+
+
+.gameplay-text-description {
+
+    margin-bottom: 20px;
+}
+
+.gameplay-super-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.gameplay-title {
+    font-size: 80px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.gameplay-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.gameplay-button-playnow {
+    font-size: 18px;
+    padding: 19px 32px;
+    background-color: #C8AA6E;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gameplay-imgcontainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameplay-img-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 10px 0;
+}
+
+.gameplay-img-item img {
+    margin-top: 30px; /* 减少顶部边距 */
+    width: 100%;
+    height: atuo;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.gameplay-img-item-description {
+    font-family: 'BeaufortforLOL';
+    font-size: 12x;
+    font-weight: 800;
+}
+
+
+
+.gameplay-video-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+/* 使视频不要离上面的section太近 */
+.gameplay-video {
+    position: relative;
+    width: 80%; /* 将宽度减小到80% */
+    padding-bottom: 80%; /* 保持正方形比例，也减小到80% */
+    /* 为什么使用padding而不是height:
+直接设置height: 100%通常不起作用,因为百分比高度需要父元素有明确的高度。
+使用padding可以基于宽度来设置高度,从而创建一个响应式的正方形。 */
+    margin: 0 auto; /* 居中显示 */
+}
+
+/* 添加一些顶部边距，使视频与上方内容保持一定距离 */
+.gameplay-video-container {
+    margin-top: 40px;
+}
+
+
+
+.gameplay-video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover; /* 改为cover以填满圆形区域 */
+}
+
+.gameplay-video-circle {
+    position: absolute;
+    top: -2%; /* 略微向上移动 */
+    left: -2%; /* 略微向左移动 */
+    width: 104%; /* 比视频稍大 */
+    height: 104%; /* 比视频稍大 */
+    border: 2px solid #C8AA6E; /* 使用金色边框 */
+    border-radius: 50%;
+    pointer-events: none; /* 确保圆圈不会干扰视频的交互 */
+}
+
+.gameplay-video-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.gameplay-video-description-title {
+    font-family: 'BeaufortforLOL';
+    margin: 48px 0 18px;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.gameplay-video-description-description {
+    margin: 0 0 24px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
