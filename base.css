@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 允许使用自定义字体 */
+@font-face {
+    font-family: 'arya';
+    src: url('./font/Arya-regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'SpiegelSans';
+    src: url('./font/SpiegelSansTrial-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'BeaufortforLOL';
+    src: url('./font/BeaufortforLOL-Bold.ttf') format('ttf')
+}

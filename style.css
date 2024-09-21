@@ -695,7 +695,7 @@ body {
 
 .gameplay-section {
     position: relative;
-    background-image: url('./images/峡谷图/玩法背景图.webp');
+    background-image: url('./images/峡谷背景图/竞技场背景图.webp');
     height: 1050px; /* 视口高度  不能少，再少就失控了*/
     background-size: cover;
     background-position: center;
@@ -781,12 +781,21 @@ body {
     margin-bottom: 20px;
 }
 
+
+.gameplay-img-item.active {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.gameplay-img-item.active img {
+    border: 2px solid #C8AA6E;
+}
+
 .gameplay-img-item-description {
     font-family: 'BeaufortforLOL';
     font-size: 12x;
     font-weight: 800;
 }
-
 
 
 .gameplay-video-container {

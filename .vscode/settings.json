@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
+    "livePreview.defaultPreviewPath": "/blbl.html",
+    "terminal.integrated.fontFamily": "'Hasklug Nerd Font'"
+}

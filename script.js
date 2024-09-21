@@ -94,4 +94,59 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 在 DOMContentLoaded 事件的最后调用这个函数
     initializeActiveIcon();
+
+
+
+
+    // 游戏模式数据
+const gameModeData = {
+    arena: {
+        background: 'url("./images/峡谷背景图/竞技场背景图.webp")',
+        video: './images/峡谷视频/竞技场视频.mp4'
+    },
+    'summoners-rift': {
+        background: 'url("./images/峡谷背景图/召唤师峡谷背景图.webp")',
+        video: './images/峡谷视频/召唤师峡谷视频.mp4'
+    },
+    aram: {
+        background: 'url("./images/峡谷背景图/大乱斗背景图.webp")',
+        video: './images/峡谷视频/大乱斗视频.mp4'
+    },
+    tft: {
+        background: 'url("./images/峡谷背景图/云顶之弈背景图.webp")',
+        video: './images/峡谷视频/云顶之弈视频.mp4'
+    }
+};
+
+// 获取所有游戏模式项
+const gameModeItems = document.querySelectorAll('.gameplay-img-item');
+const gameplaySection = document.querySelector('.gameplay-section');
+const gameplayVideo = document.querySelector('.gameplay-video video');
+
+// 为每个游戏模式项添加点击事件
+gameModeItems.forEach(item => {
+    item.addEventListener('click', function() {
+        const mode = this.getAttribute('data-mode');
+        const modeData = gameModeData[mode];
+        
+        if (modeData) {
+            // 更新背景图
+            gameplaySection.style.backgroundImage = modeData.background;
+            
+            // 更新视频
+            gameplayVideo.src = modeData.video;
+            gameplayVideo.load(); // 重新加载视频
+            gameplayVideo.play(); // 播放新视频
+            
+            // 移除所有项的活动状态
+            gameModeItems.forEach(i => i.classList.remove('active'));
+            // 为当前点击的项添加活动状态
+            this.classList.add('active');
+        }
+    });
+});
+
+// 初始化默认选中的游戏模式（这里假设默认是竞技场）
+gameModeItems[0].click();
+
 });
