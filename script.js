@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    // 游戏模式数据
+// 游戏模式数据
 const gameModeData = {
     arena: {
         background: 'url("./images/峡谷背景图/竞技场背景图.webp")',
@@ -123,30 +123,34 @@ const gameModeItems = document.querySelectorAll('.gameplay-img-item');
 const gameplaySection = document.querySelector('.gameplay-section');
 const gameplayVideo = document.querySelector('.gameplay-video video');
 
+function setActiveGameMode(clickedItem) {
+    // 移除所有项的活动状态
+    gameModeItems.forEach(item => item.classList.remove('active'));
+    // 为当前点击的项添加活动状态
+    clickedItem.classList.add('active');
+
+    const mode = clickedItem.getAttribute('data-mode');
+    const modeData = gameModeData[mode];
+    
+    if (modeData) {
+        // 更新背景图
+        gameplaySection.style.backgroundImage = modeData.background;
+        
+        // 更新视频
+        gameplayVideo.src = modeData.video;
+        gameplayVideo.load(); // 重新加载视频
+        gameplayVideo.play(); // 播放新视频
+    }
+}
+
 // 为每个游戏模式项添加点击事件
 gameModeItems.forEach(item => {
     item.addEventListener('click', function() {
-        const mode = this.getAttribute('data-mode');
-        const modeData = gameModeData[mode];
-        
-        if (modeData) {
-            // 更新背景图
-            gameplaySection.style.backgroundImage = modeData.background;
-            
-            // 更新视频
-            gameplayVideo.src = modeData.video;
-            gameplayVideo.load(); // 重新加载视频
-            gameplayVideo.play(); // 播放新视频
-            
-            // 移除所有项的活动状态
-            gameModeItems.forEach(i => i.classList.remove('active'));
-            // 为当前点击的项添加活动状态
-            this.classList.add('active');
-        }
+        setActiveGameMode(this);
     });
 });
 
 // 初始化默认选中的游戏模式（这里假设默认是竞技场）
-gameModeItems[0].click();
+setActiveGameMode(gameModeItems[0]);
 
 });
