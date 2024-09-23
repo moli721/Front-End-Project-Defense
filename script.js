@@ -102,19 +102,27 @@ document.addEventListener('DOMContentLoaded', function () {
 const gameModeData = {
     arena: {
         background: 'url("./images/峡谷背景图/竞技场背景图.webp")',
-        video: './images/峡谷视频/竞技场视频.mp4'
+        video: './images/峡谷视频/竞技场视频.mp4',
+        title: '召唤双排好伙伴',
+        description: '全新16人大混战降临，快来全新地图体验前所未见的各种增幅装置、道具，和伙伴一路攀上竞技场之巅吧！'
     },
     'summoners-rift': {
         background: 'url("./images/峡谷背景图/召唤师峡谷背景图.webp")',
-        video: './images/峡谷视频/召唤师峡谷视频.mp4'
+        video: './images/峡谷视频/召唤师峡谷视频.mp4',
+        title: '最受欢迎的游戏模式',
+        description: '努力击败与你对线的敌人，投入惊险刺激的5v5团战，抢先一步摧毁敌方的主堡！'
     },
     aram: {
         background: 'url("./images/峡谷背景图/大乱斗背景图.webp")',
-        video: './images/峡谷视频/大乱斗视频.mp4'
+        video: './images/峡谷视频/大乱斗视频.mp4',
+        title: '全部随机，全部中路',
+        description: '在这个 5v5 模式中操控随机英雄，在冰天雪地的大桥上冲向敌方主堡，享受大混战的乐趣！'
     },
     tft: {
         background: 'url("./images/峡谷背景图/云顶之弈背景图.webp")',
-        video: './images/峡谷视频/云顶之弈视频.mp4'
+        video: './images/峡谷视频/云顶之弈视频.mp4',
+        title: '各自为战，胜者为王',
+        description: '集结你的英雄队伍为你作战，击败全部七位对手，成为最后的赢家。'
     }
 };
 
@@ -122,27 +130,27 @@ const gameModeData = {
 const gameModeItems = document.querySelectorAll('.gameplay-img-item');
 const gameplaySection = document.querySelector('.gameplay-section');
 const gameplayVideo = document.querySelector('.gameplay-video video');
+const gameplayVideoDescriptionTitle = document.querySelector('.gameplay-video-description-title');
+const gameplayVideoDescriptionDescription = document.querySelector('.gameplay-video-description-description');
 
 function setActiveGameMode(clickedItem) {
-    // 移除所有项的活动状态
     gameModeItems.forEach(item => item.classList.remove('active'));
-    // 为当前点击的项添加活动状态
     clickedItem.classList.add('active');
 
     const mode = clickedItem.getAttribute('data-mode');
     const modeData = gameModeData[mode];
     
     if (modeData) {
-        // 更新背景图
         gameplaySection.style.backgroundImage = modeData.background;
-        
-        // 更新视频
         gameplayVideo.src = modeData.video;
-        gameplayVideo.load(); // 重新加载视频
-        gameplayVideo.play(); // 播放新视频
+        gameplayVideo.load();
+        gameplayVideo.play();
+
+        // 更新描述文本
+        gameplayVideoDescriptionTitle.textContent = modeData.title;
+        gameplayVideoDescriptionDescription.textContent = modeData.description;
     }
 }
-
 // 为每个游戏模式项添加点击事件
 gameModeItems.forEach(item => {
     item.addEventListener('click', function() {

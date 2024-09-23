@@ -868,6 +868,246 @@ body {
     letter-spacing: 2px;
 }
 
+.center-promotion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.backdrop-embed-video {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.backdrop-embed-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.center-promotion-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* 确保按钮在视频上方 */
+}
+
+.center-promotion-button-playnow {
+    padding: 19px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #d4b67a; /* 修改为类似 c8aa6e 的颜色 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.center-promotion-button-playnow:hover {
+    background-color: #e6c88a; /* 更亮的金色 */
+}
+
+.center-promotion-button-playnow:active {
+    background-color: #b39a6a; /* 更深的金色 */
+}
+
+/* 添加以下样式以确保按钮容器可见 */
+.center-promotion {
+    position: relative;
+}
+
+.main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111111;
+    padding-bottom: 48px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    height: 80px;
+    font-size: 14px;
+    background-color: #292929;
+}
+
+.footer-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* 确保 ul 居中 */
+}
+
+.footer-links li {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.footer-links li:hover {
+    background-color: #444444;
+}
+
+.footer-links a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social-links ul {
+    display: flex;
+    list-style: none;
+    padding: 18px 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.footer-social-links li {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.footer-social-links li:hover {
+    background-color: #444444;
+}
+
+.footer-social-links a svg {
+    fill: #ffffff;
+    width: 16px; /* 设置 svg 图标宽度 */
+    height: 16px; /* 设置 svg 图标高度 */
+}
+
+.footer-logos {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0 20px;
+}
+
+.footer-logos svg {
+    transition: all 0.15s ease;
+}
+
+.footer-logos svg:hover {
+    fill: #f9f9f9;
+}
+
+.footer-logos img {
+    margin-left: 24px;
+}
+
+.footer-copyright {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    text-align: center;
+    color: #7e7e7e;
+}
+
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-legal-links ul {
+    display: flex;
+    list-style: none;
+    padding: 24px 28px;
+    margin: 0;
+    justify-content: center;
+}
+
+.footer-legal-links li {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.footer-legal-links li:hover {
+    background-color: #444444;
+}
+
+.footer-legal-links a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-game-ratings {
+    display: flex;
+    background-color: #292929;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-rating-text-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-rating-logo {
+    margin: 12px;
+}
+
+.game-rating-logo img {
+    width: 55px;
+    height: 55px;
+}
+
+.game-rating-text {
+    font-size: 13px;
+    color: #efefef;
+    margin-left: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
