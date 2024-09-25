@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hexo-show.css">
+</head>
+
+<style>
+        
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: #D2D2D2;
+        background-image:
+        repeating-linear-gradient(
+            to right, transparent 0 100px,
+            #25283b22 100px 101px
+        ),
+        repeating-linear-gradient(
+            to bottom, transparent 0 100px,
+            #25283b22 100px 101px
+        );
+    }
+    
+    body::before{
+        position: absolute;
+        width: min(1400px, 90vw);
+        top: 10%;
+        left: 50%;
+        height: 90%;
+        transform: translateX(-50%);
+        content: '';
+        background-image: url(images/bg.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        pointer-events: none;
+    }
+</style>
+<script src="hexo-show.js"></script>
+
+<body>
+    <div class="banner">
+        <div class="slider" style="--quantity: 5">
+            <div class="item" style="--position: 1">
+                <video src="./asset/video/均衡之龙 沃利贝尔 登录界动态插画_P2_至臻.mp4" muted autoplay loop></video>
+            </div>
+            <div class="item" style="--position: 2">
+                <video src="./asset/video/源计划铁男莫德凯撒动态壁纸.mp4" muted autoplay loop></video>
+            </div>
+            <div class="item" style="--position: 3  ">
+                <video src="./asset/video/天煞动态劫高清版.mp4" muted autoplay loop></video>
+            </div>
+            <div class="item" style="--position: 4  ">
+                <video src="./asset/video/王国机甲万豪.mp4" muted autoplay loop></video>
+            </div>
+            <div class="item" style="--position: 5">
+                <video src="./asset/video/神王诺手.mp4" muted autoplay loop></video>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1 data-content="League of Legends">League of Legends</h1>
+            <div class="sub-content">
+                <h2>上单五虎</h2>
+                <p>尽显数值对抗之美，五大上单英雄，谁能问鼎巅峰？</p>
+            </div>
+            <div class="model"></div>
+        </div>
+        
+    </div>
+
+</body>
+</html>

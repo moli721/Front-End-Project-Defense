@@ -1,0 +1,108 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top:10%;
+    /* 50%将元素左边缘置于容器中心，减去100px（元素宽度的一半）使元素居中 */
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    /* 利用autoRun以及@keyframes实现3D旋转 */
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun {
+    /* 添加persperctive，动画可能会覆盖父元素的设置，因此要确保perspective在过程中保持一致 */
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+    to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    /* 将元素的左边缘置于容器的左边缘，右边缘置于容器的右边缘，顶部和底部边缘分别置于容器的顶部和底部边缘 */
+    inset: 0 0 0 0;
+    transform: 
+    rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+    translateZ(550px);
+}
+
+
+
+.banner .slider .item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px,100vw);
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.banner .content h1 {
+    font-family: 'Ica Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+
+.banner .content .sub-content {
+    font-family: 'Noto Sans JP';
+    text-align: right;
+    max-width: 200px;
+}
+
+.banner .content .sub-content h2 {
+    font-size: 3em;
+}
+
+.banner .content .model {
+    background-image: url(./asset/image/model.png);
+    width: 100%;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 0;
+}
+
