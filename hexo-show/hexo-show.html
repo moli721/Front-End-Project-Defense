@@ -9,22 +9,21 @@
 
 <style>
         
-    *{
+        *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
     body{
-        background-color: #D2D2D2;
-        background-image:
-        repeating-linear-gradient(
-            to right, transparent 0 100px,
-            #25283b22 100px 101px
-        ),
-        repeating-linear-gradient(
-            to bottom, transparent 0 100px,
-            #25283b22 100px 101px
-        );
+        background-color: #050508;
+        background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 1px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px),
+        radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 1px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 1px, transparent 1px);
+        background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+        animation: backgroundMove 60s linear infinite;
     }
     
     body::before{
@@ -35,7 +34,7 @@
         height: 90%;
         transform: translateX(-50%);
         content: '';
-        background-image: url(images/bg.png);
+        background-image: url(./asset/image/bg.png);
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: top center;
@@ -48,31 +47,89 @@
     <div class="banner">
         <div class="slider" style="--quantity: 5">
             <div class="item" style="--position: 1">
-                <video src="./asset/video/均衡之龙 沃利贝尔 登录界动态插画_P2_至臻.mp4" muted autoplay loop></video>
+                <video src="./asset/video-1/格温动态.mp4" muted autoplay loop></video>
             </div>
             <div class="item" style="--position: 2">
-                <video src="./asset/video/源计划铁男莫德凯撒动态壁纸.mp4" muted autoplay loop></video>
+                <video src="./asset/video-1/灵魂莲华锐雯.mp4" muted autoplay loop></video>
             </div>
             <div class="item" style="--position: 3  ">
-                <video src="./asset/video/天煞动态劫高清版.mp4" muted autoplay loop></video>
+                <video src="./asset/video-1/玉剑传说刀妹4K动态壁纸.mp4" muted autoplay loop></video>
             </div>
             <div class="item" style="--position: 4  ">
-                <video src="./asset/video/王国机甲万豪.mp4" muted autoplay loop></video>
+                <video src="./asset/video-1/英雄联盟 壁纸推荐 上单四姐妹 剑姬.mp4" muted autoplay loop></video>
             </div>
             <div class="item" style="--position: 5">
-                <video src="./asset/video/神王诺手.mp4" muted autoplay loop></video>
+                <video src="./asset/video-1/英雄联盟 星域审判官·卡蜜尔 电脑插画动态壁纸.mp4" muted autoplay loop></video>
             </div>
         </div>
 
         <div class="content">
             <h1 data-content="League of Legends">League of Legends</h1>
             <div class="sub-content">
-                <h2>上单五虎</h2>
-                <p>尽显数值对抗之美，五大上单英雄，谁能问鼎巅峰？</p>
+                <h2>Top five sisters</h2>
             </div>
             <div class="model"></div>
         </div>
         
+    </div>
+
+
+
+    <div class="battle">
+        <div class="battle-item">
+            <p>
+                VS
+            </p>
+        </div>
+    </div>
+
+    <div class="text">
+        <h2>TOP FIVE TIGERS</h2>
+    </div>
+
+    <div class="container">
+
+        
+        <div class="panel-wrapper active">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+            <div class="panel">
+                <video src="./asset/video/均衡之龙 沃利贝尔 登录界动态插画_P2_至臻.mp4" autoplay loop muted></video>
+                <h3>探索世界</h3>
+            </div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+            <div class="panel">
+                <video src="./asset/video/天煞动态劫高清版.mp4" autoplay loop muted></video>
+                <h3>野生森林</h3>
+            </div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+            <div class="panel">
+                <video src="./asset/video/王国机甲万豪.mp4" autoplay loop muted></video>
+                <h3>阳光海滩</h3>
+            </div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+            <div class="panel">
+                <video src="./asset/video/源计划铁男莫德凯撒动态壁纸.mp4" autoplay loop muted></video>
+                <h3>冬季城市</h3>
+            </div>
+        </div>
+        <div class="panel-wrapper">
+            <div class="border-top"></div>
+            <div class="border-bottom"></div>
+            <div class="panel">
+                <video src="./asset/video/神王诺手.mp4" autoplay loop muted></video>
+                <h3>山脉与云彩</h3>
+            </div>
+        </div>
     </div>
 
 </body>

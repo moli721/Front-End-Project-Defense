@@ -14,7 +14,7 @@
     position: absolute;
     width: 300px;
     height: 300px;
-    top:10%;
+    top: 10%;
     /* 50%将元素左边缘置于容器中心，减去100px（元素宽度的一半）使元素居中 */
     left: calc(50% - 100px);
     transform-style: preserve-3d;
@@ -25,10 +25,12 @@
 }
 
 @keyframes autoRun {
+
     /* 添加persperctive，动画可能会覆盖父元素的设置，因此要确保perspective在过程中保持一致 */
     from {
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
     }
+
     to {
         transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
@@ -38,9 +40,8 @@
     position: absolute;
     /* 将元素的左边缘置于容器的左边缘，右边缘置于容器的右边缘，顶部和底部边缘分别置于容器的顶部和底部边缘 */
     inset: 0 0 0 0;
-    transform: 
-    rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
-    translateZ(550px);
+    transform:
+        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px);
 }
 
 
@@ -57,7 +58,7 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: min(1400px,100vw);
+    width: min(1400px, 100vw);
     padding-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
@@ -68,13 +69,13 @@
 
 .banner .content h1 {
     font-family: 'Ica Rubrik';
-    font-size: 16em;
+    font-size: 12em;
     line-height: 1em;
     color: #25283B;
     position: relative;
 }
 
-.banner .content h1::after{
+.banner .content h1::after {
     position: absolute;
     inset: 0 0 0 0;
     content: attr(data-content);
@@ -84,14 +85,22 @@
 }
 
 .banner .content .sub-content {
-    font-family: 'Noto Sans JP';
-    text-align: right;
-    max-width: 200px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    margin-left: auto;
+    /* 将元素置于一行的最右边 */
+    color: #708090;
 }
 
 .banner .content .sub-content h2 {
+    flex-wrap: wrap;
     font-size: 3em;
+    margin-right: 20px;
 }
+
 
 .banner .content .model {
     background-image: url(./asset/image/model.png);
@@ -106,3 +115,188 @@
     z-index: 0;
 }
 
+
+.battle-item {
+    position: relative;
+    z-index: 3;
+    margin: 100px;
+}
+
+.battle-item p {
+    font-family: 'Ica Rubrik', sans-serif;
+    font-size: 10em;
+    line-height: 1em;
+    color: #FFD700;
+    text-align: center;
+    animation: fireDiv 1s infinite;
+}
+
+@keyframes fireDiv {
+    0% {
+        text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
+            -2px -15px 11px #f80, 2px -25px 18px #f20;
+    }
+
+    25% {
+        text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
+            -3px -20px 11px #f80, 4px -30px 22px #f20;
+    }
+
+    50% {
+        text-shadow: 0 0 4px white, 2px -10px 8px #ff3, 2px -14px 10px #fd3,
+            -4px -25px 11px #f80, 4px -35px 25px #f20;
+    }
+
+    75% {
+        text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
+            -3px -20px 11px #f80, 4px -30px 22px #f20;
+    }
+
+    100% {
+        text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
+            -2px -15px 11px #f80, 2px -25px 18px #f20;
+    }
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.text {
+    font-family: 'Ica Rubrik', sans-serif;
+    font-size: 2em;
+    line-height: 1em;
+    color: #4B0082;  /* 紫蓝色 */
+    text-align: center;
+}
+
+
+.panel-wrapper {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 700ms ease-in;
+    overflow: hidden;
+}
+
+.panel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel-wrapper.active {
+    flex: 5;
+}
+
+.panel-wrapper.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.panel-wrapper::before,
+.panel-wrapper::after,
+.panel-wrapper .border-top,
+.panel-wrapper .border-bottom {
+    content: '';
+    position: absolute;
+    background: #50dfdb;
+    z-index: 1;
+}
+
+.panel-wrapper::before,
+.panel-wrapper::after {
+    top: 0;
+    bottom: 0;
+    width: 3px;
+}
+
+.panel-wrapper::before {
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: borderVertical 4s linear infinite;
+}
+
+.panel-wrapper::after {
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    animation: borderVertical 4s linear infinite 2s;
+}
+
+.panel-wrapper .border-top,
+.panel-wrapper .border-bottom {
+    left: 0;
+    right: 0;
+    height: 3px;
+}
+
+.panel-wrapper .border-top {
+    top: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: borderHorizontal 4s linear infinite;
+}
+
+.panel-wrapper .border-bottom {
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    animation: borderHorizontal 4s linear infinite 2s;
+}
+
+@keyframes borderVertical {
+
+    0%,
+    100% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes borderHorizontal {
+
+    0%,
+    100% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+}
+
+.panel video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
