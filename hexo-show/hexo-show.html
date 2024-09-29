@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,25 @@
 </head>
 
 <style>
-        
-        *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    body{
+
+    body {
         background-color: #050508;
-        background-image: 
-        radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 1px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 1px),
-        radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 1px),
-        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 1px, transparent 1px);
+        background-image:
+            radial-gradient(white, rgba(255, 255, 255, .2) 1px, transparent 1px),
+            radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 1px),
+            radial-gradient(white, rgba(255, 255, 255, .1) 1px, transparent 1px),
+            radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 1px, transparent 1px);
         background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
         background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
         animation: backgroundMove 60s linear infinite;
     }
-    
-    body::before{
+
+    body::before {
         position: absolute;
         width: min(1400px, 90vw);
         top: 10%;
@@ -70,7 +71,7 @@
             </div>
             <div class="model"></div>
         </div>
-        
+
     </div>
 
 
@@ -89,13 +90,15 @@
 
     <div class="container">
 
-        
+
         <div class="panel-wrapper active">
             <div class="border-top"></div>
             <div class="border-bottom"></div>
             <div class="panel">
                 <video src="./asset/video/均衡之龙 沃利贝尔 登录界动态插画_P2_至臻.mp4" autoplay loop muted></video>
-                <h3>探索世界</h3>
+                <div class="panel-text">
+                    <h3>雷霆咆哮</h3>
+                </div>
             </div>
         </div>
         <div class="panel-wrapper">
@@ -103,7 +106,9 @@
             <div class="border-bottom"></div>
             <div class="panel">
                 <video src="./asset/video/天煞动态劫高清版.mp4" autoplay loop muted></video>
-                <h3>野生森林</h3>
+                <div class="panel-text">
+                    <h3>影流之主</h3>
+                </div>
             </div>
         </div>
         <div class="panel-wrapper">
@@ -111,7 +116,9 @@
             <div class="border-bottom"></div>
             <div class="panel">
                 <video src="./asset/video/王国机甲万豪.mp4" autoplay loop muted></video>
-                <h3>阳光海滩</h3>
+                <div class="panel-text">
+                    <h3>王国机甲</h3>
+                </div>
             </div>
         </div>
         <div class="panel-wrapper">
@@ -119,7 +126,9 @@
             <div class="border-bottom"></div>
             <div class="panel">
                 <video src="./asset/video/源计划铁男莫德凯撒动态壁纸.mp4" autoplay loop muted></video>
-                <h3>冬季城市</h3>
+                <div class="panel-text">
+                    <h3>莫德凯撒</h3>
+                </div>
             </div>
         </div>
         <div class="panel-wrapper">
@@ -127,10 +136,12 @@
             <div class="border-bottom"></div>
             <div class="panel">
                 <video src="./asset/video/神王诺手.mp4" autoplay loop muted></video>
-                <h3>山脉与云彩</h3>
+                <div class="text"></div>
+                <h3>德莱厄斯</h3>
             </div>
         </div>
     </div>
 
 </body>
+
 </html>

@@ -40,8 +40,13 @@
     position: absolute;
     /* 将元素的左边缘置于容器的左边缘，右边缘置于容器的右边缘，顶部和底部边缘分别置于容器的顶部和底部边缘 */
     inset: 0 0 0 0;
+    /* 使用3D变换来创建旋转木马效果 */
     transform:
-        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity)))) translateZ(550px);
+        /* 根据元素的位置计算Y轴旋转角度，实现均匀分布在圆周上 */
+        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+        /* 将元素向Z轴正方向移动550px，创造出3D深度效果 */
+        /* 每个元素都有自己的空间坐标系，translateZ是向它自己的Z轴移动 */
+        translateZ(550px);
 }
 
 
@@ -76,12 +81,12 @@
 }
 
 .banner .content h1::after {
-    position: absolute;
-    inset: 0 0 0 0;
-    content: attr(data-content);
-    z-index: 2;
-    -webkit-text-stroke: 2px #d2d2d2;
-    color: transparent;
+    position: absolute;  /* 绝对定位,相对于最近的定位祖先元素 */
+    inset: 0 0 0 0;  /* 设置元素的上右下左边距都为0,使其完全覆盖父元素 */
+    content: attr(data-content);  /* 使用data-content属性的值作为伪元素的内容 */
+    z-index: 2;  /* 设置层级,确保在其他元素之上 */
+    -webkit-text-stroke: 2px #d2d2d2;  /* 设置文字描边,宽度为2px,颜色为浅灰色 */
+    color: transparent;  /* 设置文字颜色为透明,只显示描边效果 */
 }
 
 .banner .content .sub-content {
@@ -131,30 +136,51 @@
     animation: fireDiv 1s infinite;
 }
 
+/* 定义火焰文字动画效果 */
 @keyframes fireDiv {
+    /* 初始状态 */
     0% {
-        text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
-            -2px -15px 11px #f80, 2px -25px 18px #f20;
+        text-shadow: 0 0 4px white,        /* 白色光晕 */
+                     0 -5px 4px #ff3,      /* 黄色火焰底部 */
+                     2px -10px 6px #fd3,   /* 橙色火焰中部 */
+                     -2px -15px 11px #f80, /* 深橙色火焰上部 */
+                     2px -25px 18px #f20;  /* 红色火焰顶部 */
     }
 
+    /* 25%状态：火焰稍微增强 */
     25% {
-        text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
-            -3px -20px 11px #f80, 4px -30px 22px #f20;
+        text-shadow: 0 0 4px white,
+                     2px -7px 6px #ff3,
+                     2px -12px 8px #fd3,
+                     -3px -20px 11px #f80,
+                     4px -30px 22px #f20;
     }
 
+    /* 50%状态：火焰最强 */
     50% {
-        text-shadow: 0 0 4px white, 2px -10px 8px #ff3, 2px -14px 10px #fd3,
-            -4px -25px 11px #f80, 4px -35px 25px #f20;
+        text-shadow: 0 0 4px white,
+                     2px -10px 8px #ff3,
+                     2px -14px 10px #fd3,
+                     -4px -25px 11px #f80,
+                     4px -35px 25px #f20;
     }
 
+    /* 75%状态：火焰开始减弱，与25%状态相同 */
     75% {
-        text-shadow: 0 0 4px white, 2px -7px 6px #ff3, 2px -12px 8px #fd3,
-            -3px -20px 11px #f80, 4px -30px 22px #f20;
+        text-shadow: 0 0 4px white,
+                     2px -7px 6px #ff3,
+                     2px -12px 8px #fd3,
+                     -3px -20px 11px #f80,
+                     4px -30px 22px #f20;
     }
 
+    /* 100%状态：回到初始状态，形成循环 */
     100% {
-        text-shadow: 0 0 4px white, 0 -5px 4px #ff3, 2px -10px 6px #fd3,
-            -2px -15px 11px #f80, 2px -25px 18px #f20;
+        text-shadow: 0 0 4px white,
+                     0 -5px 4px #ff3,
+                     2px -10px 6px #fd3,
+                     -2px -15px 11px #f80,
+                     2px -25px 18px #f20;
     }
 }
 
@@ -215,77 +241,90 @@
     transition: opacity 0.3s ease-in 0.4s;
 }
 
+/* 为面板包装器设置边框效果 */
 .panel-wrapper::before,
 .panel-wrapper::after,
 .panel-wrapper .border-top,
 .panel-wrapper .border-bottom {
     content: '';
     position: absolute;
-    background: #50dfdb;
-    z-index: 1;
+    background: #50dfdb; /* 设置边框颜色 */
+    z-index: 1; /* 确保边框在内容之上 */
 }
 
+/* 设置垂直边框的基本样式 */
 .panel-wrapper::before,
 .panel-wrapper::after {
     top: 0;
     bottom: 0;
-    width: 3px;
+    width: 3px; /* 设置边框宽度 */
 }
 
+/* 左侧边框 */
 .panel-wrapper::before {
     left: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    animation: borderVertical 4s linear infinite;
+    transform: scaleY(0); /* 初始状态为不可见 */
+    transform-origin: top; /* 从顶部开始变化 */
+    animation: borderVertical 4s linear infinite; /* 应用垂直边框动画 */
 }
 
+/* 右侧边框 */
 .panel-wrapper::after {
     right: 0;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    animation: borderVertical 4s linear infinite 2s;
+    transform: scaleY(0); /* 初始状态为不可见 */
+    transform-origin: bottom; /* 从底部开始变化 */
+    animation: borderVertical 4s linear infinite 2s; /* 应用垂直边框动画，延迟2秒 */
 }
 
+/* 设置水平边框的基本样式 */
 .panel-wrapper .border-top,
 .panel-wrapper .border-bottom {
     left: 0;
     right: 0;
-    height: 3px;
+    height: 3px; /* 设置边框高度 */
 }
 
+/* 顶部边框 */
 .panel-wrapper .border-top {
     top: 0;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: borderHorizontal 4s linear infinite;
+    transform: scaleX(0); /* 初始状态为不可见 */
+    transform-origin: left; /* 从左侧开始变化 */
+    animation: borderHorizontal 4s linear infinite; /* 应用水平边框动画 */
 }
 
+/* 底部边框 */
 .panel-wrapper .border-bottom {
     bottom: 0;
-    transform: scaleX(0);
-    transform-origin: right;
-    animation: borderHorizontal 4s linear infinite 2s;
+    transform: scaleX(0); /* 初始状态为不可见 */
+    transform-origin: right; /* 从右侧开始变化 */
+    animation: borderHorizontal 4s linear infinite 2s; /* 应用水平边框动画，延迟2秒 */
 }
 
-@keyframes borderVertical {
 
+
+/* 定义垂直边框动画 */
+@keyframes borderVertical {
+    /* 动画开始和结束时，边框缩放为0（不可见） */
     0%,
     100% {
         transform: scaleY(0);
     }
 
+    /* 动画中间点，边框完全展开（可见） */
     50% {
         transform: scaleY(1);
     }
 }
 
+/* 定义水平边框动画 */
 @keyframes borderHorizontal {
-
+    /* 动画开始和结束时，边框缩放为0（不可见） */
     0%,
     100% {
         transform: scaleX(0);
     }
 
+    /* 动画中间点，边框完全展开（可见） */
     50% {
         transform: scaleX(1);
     }
@@ -299,4 +338,15 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
+}
+
+.panel-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
