@@ -256,7 +256,7 @@
 .panel-wrapper::before,
 .panel-wrapper::after {
     top: 0;
-    bottom: 0;
+    bottom: 0; /* 使边框从上到下覆盖整个面板 */
     width: 3px; /* 设置边框宽度 */
 }
 

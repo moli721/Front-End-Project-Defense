@@ -358,7 +358,7 @@ body {
 .hexo-container {
     display: flex;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: stretch; /* 子元素将被拉伸以填满容器 */
     padding: 0 45px;
     background-image: url('./images/英雄背景图/刺客背景图.webp');
     background-size: cover;

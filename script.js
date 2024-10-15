@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateProcessBar() {
-        const totalGroups = Math.ceil(icons.length / 5);
-        const processWidth = 100 / totalGroups;
-        processBar.style.width = `${processWidth}%`;
-        processBar.style.left = `${processWidth * currentIndex}%`;
+        const totalGroups = Math.ceil(icons.length / 5); /* 一组最多五个，超过五个就分组 */
+        const processWidth = 100 / totalGroups; /* 进度条的宽度 */
+        processBar.style.width = `${processWidth}%`; /* 进度条的宽度 */
+        processBar.style.left = `${processWidth * currentIndex}%`; /* 进度条的位置 */
     }
 
 
