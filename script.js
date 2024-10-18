@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function updateHeroAndBackground(heroType, clickedIcon) {
-        const currentHero = heroData.find(hero => hero.type === heroType);
+        const currentHero = heroData.find(hero => hero.type === heroType); //找到与当前点击的图标相对应的英雄数据
         if (currentHero) {
-            heroImg.src = `./images/英雄/${currentHero.hero}.webp`;
+            heroImg.src = `./images/英雄/${currentHero.hero}.webp`; //更新英雄图片
             heroImg.alt = currentHero.hero;
-            hexoContainer.style.backgroundImage = currentHero.background;
+            hexoContainer.style.backgroundImage = currentHero.background; //更新背景图片
 
             // 移除所有图标的 active 类
             icons.forEach(icon => icon.classList.remove('active'));
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 给每一个tab添加一个点击事件，当点击时，获取到该tab的data-hero属性的值，然后根据该值，更新heroImg的src属性，以及hexoContainer的backgroundImage属性
     icons.forEach(icon => {
         icon.addEventListener('click', function () {
-            const heroType = this.getAttribute('data-hero');
+            const heroType = this.getAttribute('data-hero'); //以data为前缀的自定义属性
             updateHeroAndBackground(heroType,this);
         });
     });
