@@ -17,12 +17,16 @@
 
     body {
         background-color: #050508;
+        /* 以中心点为半径的渐变效果 */
+        /* 粒子的形状是通过 radial-gradient 创建的 */
         background-image:
             radial-gradient(white, rgba(255, 255, 255, .2) 1px, transparent 1px),
             radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 1px),
             radial-gradient(white, rgba(255, 255, 255, .1) 1px, transparent 1px),
             radial-gradient(rgba(255, 255, 255, .4), rgba(255, 255, 255, .1) 1px, transparent 1px);
+        /* 粒子分布密度 */
         background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+        /* 粒子位置 */
         background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
         animation: backgroundMove 20s linear infinite;
     }

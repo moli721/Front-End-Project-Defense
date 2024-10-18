@@ -117,7 +117,7 @@
     background-size: auto 130%;
     background-repeat: no-repeat;
     background-position: top center;
-    z-index: 0;
+    z-index: 1;/*在h1的上面，在伪元素下面 */
 }
 
 
@@ -145,6 +145,7 @@
                      2px -10px 6px #fd3,   /* 橙色火焰中部 */
                      -2px -15px 11px #f80, /* 深橙色火焰上部 */
                      2px -25px 18px #f20;  /* 红色火焰顶部 */
+                    /* 水平偏移 垂直偏移 模糊半径 叠加*/
     }
 
     /* 25%状态：火焰稍微增强 */
@@ -255,8 +256,8 @@
 /* 设置垂直边框的基本样式 */
 .panel-wrapper::before,
 .panel-wrapper::after {
-    top: 0;
-    bottom: 0; /* 使边框从上到下覆盖整个面板 */
+    top: 0;      /* 将伪元素的顶部边缘对齐到父元素的顶部 */
+    bottom: 0; /*  /* 将伪元素的底部边缘对齐到父元素的底部，使边框从上到下覆盖整个面板 */
     width: 3px; /* 设置边框宽度 */
 }
 
