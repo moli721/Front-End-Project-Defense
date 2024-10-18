@@ -40,8 +40,14 @@
                 <li><a href="https://lolriotmall.qq.com/user/collect.shtml?CLICKTAG=merchmall.pc.index.nav257">手办收藏</a></li>
             </ul>
         </div>
-        <div id="d3">
-                    <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202410/20241011142732_916942.jpg" style="height: 500px; width: 1640px; ">
+        <div class="d3">
+            <div class="d3-img">
+	
+                <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202410/20241014135623_576610.jpg" alt="">
+                <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202410/20241011142732_916942.jpg" alt="">
+                <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202409/20240926101501_400561.jpg" alt="">
+                <img src="https://game.gtimg.cn/images/daojushop/zb/ad/202409/20240919132113_701386.jpg" alt="">
+        </div>
         </div>
         <div id="d4">
             <div id="d41">
@@ -171,11 +177,49 @@ ul li  a{color:#FFF;
     ul li ul{display: none}
     ul li:hover ul{display: block;}
     ul li ul li a:hover{background:#FF0000;}
-#d3{
-    width: 100%;
-    height: 500px;
+.d3{
+	width:1600px;
+	height:400px;
+    background-color: #333;
+	margin:1rem auto;
+	overflow: hidden;
 	position: relative;
-	z-index: -1;
+}
+.d3 .d3-img {
+	width:6400px;
+	height:400px;
+	overflow: hidden;
+	position: absolute;
+	/* 开启弹性盒，让图片横向排列 */
+	display: flex;
+	animation: run 10s ease infinite;
+}
+.d3 .d3-img  img{
+	width:1600px;
+	height:100%;
+}
+
+@keyframes run {
+	0%,20%{
+		/* margin-left: 0; */
+		transform: translateX(0);
+	}
+	30%,50%{
+		/* margin-left: -1200px;; */
+		transform: translateX(-1600px);
+	}
+	60%,70%{
+		/* margin-left: -2400px; */
+		transform: translateX(-3200px);
+	}
+	80%,90%{
+		/* margin-left: -3600px; */
+		transform: translateX(-4800px);
+	}
+	100%{
+		/* margin-left: 0; */
+		transform: translateX(0);
+	}
 }
 #d4{
     width: 100%;
